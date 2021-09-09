@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mask/ui/widget/remain_stat_list_tile.dart';
 import 'package:provider/provider.dart';
-import 'package:mask/viewmodel/store_model.dart';
+import 'package:mask/provider/store_provider.dart';
 
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final storeModel = Provider.of<StoreModel>(context);
+    final storeModel = Provider.of<StoreProvider>(context);
+
     return Scaffold(
         appBar: AppBar(
           title: Text('마스크 재고 있는 곳 : ${storeModel.stores.length}곳'),

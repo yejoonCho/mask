@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:mask/model/store.dart';
 
 class StoreRepository {
-  Future<List<Store>> fetch() async {
+  Future<List<Store>> fetch(double latitude, double longitude) async {
     final stores = <Store>[];
     var url = Uri.parse('https://gist.githubusercontent.com/'
         'junsuk5/bb7485d5f70974deee920b8f0cd1e2f0/raw/'

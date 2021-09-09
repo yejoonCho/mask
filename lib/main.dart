@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:mask/ui/screen/main_page.dart';
-import 'package:mask/viewmodel/store_model.dart';
+import 'package:mask/provider/store_provider.dart';
 
-void main() => runApp(ChangeNotifierProvider.value(
-      value: StoreModel(),
-      child: MyApp(),
-    ));
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  return runApp(ChangeNotifierProvider.value(
+    value: StoreProvider(),
+    child: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   @override
